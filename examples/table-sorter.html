@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>table sorter example</title>
+    <link rel="stylesheet" type="text/css" href="../src/table-sorter.css">
+    <script type="text/javascript" src="../src/table-sorter.js"></script>
+    <script type="text/javascript" src="data-example.js"></script>
+  </head>
+  <body>
+    <h1>Table sorter example</h1>
+    <p>An example of a sortable table.  The table header contains buttons that when clicked, will sort the corresponding table column.  The table data is stored in a javascript variable.  The HTML table is populated using this dataa.</p>
+    <p>Create the table with the following code:</p>
+    <pre>
+&lt;table id="table ID">
+&lt;/table>
+    </pre>
+    <p>To fill the table with its elements add the following code:</p>
+    <pre>
+&lt;script type="text/javascript">
+  table_sorter_create ('table ID', table_data, table_columns);
+&lt;/script>
+    </pre>
+    <p>The first argument should be the table id.</p>
+    <p>Variable <code>table_data</code> should be a matrix containing the data that is going to be used to fill the HTML table and to sort it.  An example of this variable is:</p>
+    <pre>
+var table_data = [
+  [1,  2,  3,  4],
+  [5,  6,  7,  8],
+  [9, 10, 11, 12],
+  [9,  9,  4,  4]];
+    </pre>
+    <p>The third parameter should be a list containing a description of the columns that the table.  This description includes the column name, which column in the table data should be used as display value, whether it should be sortable, and if so which column in the table matrix should be used as sorting key.  This data should be provided as a dictionary.  The following is an example:</p>
+    <pre>
+var table_columns = [{
+   column_name : "teste",
+   view_index : 0,
+   sortable : true,
+   sort_index : 0
+   }, {
+   column_name : "fui",
+   view_index : 2,
+   sortable : false
+  }];
+    </pre>
+    <table class="sorter" id="tabelaA">
+      <!-- <thead> -->
+      <!-- 	<tr> -->
+      <!-- 	  <th> -->
+      <!-- 	    <button onClick="table_sorter('tabelaA', tabelaA_data, tabelaA_column, 0)"> -->
+      <!-- 	      nala -->
+      <!-- 	    </button> -->
+      <!-- 	  </th> -->
+      <!-- 	</tr> -->
+      <!-- </thead> -->
+    </table>
+    <script type="text/javascript">
+      table_sorter_create ('tabelaA', tabelaA_data, tabelaA_column);
+    </script>
+    <hr>
+    <address><a href="mailto:pedro@pena">Pedro Lopes da Silva Mariano</a></address>
+<!-- Created: Tue Dec  6 17:03:03 WET 2016 -->
+<!-- hhmts start -->
+Last modified: Fri Jan 20 16:24:51 WET 2017
+<!-- hhmts end -->
+  </body>
+</html>
